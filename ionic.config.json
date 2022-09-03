@@ -1,0 +1,7 @@
+{
+  "name": "peasinapod",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
