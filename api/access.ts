@@ -1,11 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 export default async (req: VercelRequest, res: VercelResponse) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
-  }
   try {
     const result = {
       input: req.body.input,
@@ -14,6 +9,6 @@ export default async (req: VercelRequest, res: VercelResponse) => {
 
     res.status(200).send(result);
   } catch (exception) {
-    res.status(500).send({ error: exception.message, endpoint: 'access' });
+    res.status(500).send({ error: exception });
   }
 };
