@@ -5,7 +5,7 @@
       <h1>Pre Release</h1>
       <ion-item>
         <ion-label>Access code</ion-label>
-        <ion-input (ionChange)="validate()" [(ngModel)]="accessCode"></ion-input>
+        <ion-input (ionChange)="this.accessCodeMessenger.next(this.accessCode)" [(ngModel)]="accessCode"></ion-input>
       </ion-item>
     </div>
   </ng-container>
