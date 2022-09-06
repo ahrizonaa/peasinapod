@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+
+import {
+  AnimationController,
+  createAnimation,
+  ToastController,
+} from '@ionic/angular';
 
 // import Swiper core and required modules
 import SwiperCore, { EffectCreative, Pagination } from 'swiper';
@@ -12,6 +18,7 @@ SwiperCore.use([EffectCreative, Pagination]);
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  @ViewChild('accesspanel') accesspanel: ElementRef;
   accessCode;
   access = false;
   creativeEffect: any = {
@@ -27,12 +34,30 @@ export class HomePage {
   paginateOptions: any = {
     clickable: true,
   };
-  constructor() {}
+  constructor(
+    private animations: AnimationController,
+    private toast: ToastController
+  ) {}
 
   validate() {
-    console.log(this.accessCode);
     if (this.accessCode == '4115') {
-      this.access = true;
+      const animation = this.animations
+        .create()
+        .addElement(this.accesspanel.nativeElement)
+        .duration(500)
+        .fromTo('opacity', '1', '0')
+        .onFinish(async () => {
+          this.access = true;
+          (
+            await this.toast.create({
+              message: 'Coming up',
+              duration: 2000,
+              translucent: true,
+              cssClass: 'access-toast',
+            })
+          ).present();
+        });
+      animation.play();
     } else {
       this.access = false;
     }

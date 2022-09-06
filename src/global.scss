@@ -127,3 +127,7 @@
 .swiper-v {
   background: #eee;
 }
+
+.access-toast::part(message) {
+  text-align: center;
+}
