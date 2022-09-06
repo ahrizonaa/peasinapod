@@ -1,6 +1,10 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 export default async (req: VercelRequest, res: VercelResponse) => {
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
   try {
     const result = {
       input: req.body.input,
