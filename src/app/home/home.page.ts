@@ -52,7 +52,7 @@ export class HomePage {
 
   async validate() {
     this.http
-      .post('https://peazinapod.vercel.app/api/access', {
+      .post('https://peazinapod.org/api/access', {
         input: this.accessCode,
       })
       .subscribe((res: any) => {
