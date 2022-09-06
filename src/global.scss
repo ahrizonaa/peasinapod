@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,106 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@import "~swiper/css/bundle";
+
+.swiper {
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.swiper-h > .swiper-wrapper {
+  & .swiper-slide:nth-child(1n) {
+    background-color: #174950;
+  }
+
+  & .swiper-slide:nth-child(2n) {
+    background-color: #008080;
+  }
+
+  & .swiper-slide:nth-child(3n) {
+    background-color: #e60234;
+    color: #000;
+  }
+
+  & .swiper-slide:nth-child(4n) {
+    background-color: #8b0f32;
+    color: #eee;
+  }
+}
+
+.swiper-adoption > .swiper-wrapper {
+  .swiper-slide:nth-child(1n) {
+    background-color: #174950;
+  }
+
+  .swiper-slide:nth-child(2n) {
+    background-color: rgb(40, 27, 36);
+  }
+
+  .swiper-slide:nth-child(3n) {
+    background-color: rgb(62, 56, 66);
+  }
+
+  .swiper-slide:nth-child(4n) {
+    background-color: rgb(116, 133, 143);
+  }
+
+  .swiper-slide:nth-child(5n) {
+    background-color: rgb(164, 189, 190);
+  }
+
+  .swiper-slide:nth-child(6n) {
+    background-color: rgb(189, 214, 218);
+  }
+}
+
+.swiper-mental > .swiper-wrapper {
+  .swiper-slide:nth-child(1n) {
+    background-color: #f4ede0;
+    color: #222222;
+  }
+
+  .swiper-slide:nth-child(2n) {
+    background-color: #0052d5;
+    color: #ddd;
+  }
+
+  .swiper-slide:nth-child(3n) {
+    background-color: #003471;
+    color: #ddd;
+  }
+
+  .swiper-slide:nth-child(4n) {
+    background-color: #5c43a9;
+    color: #ddd;
+  }
+
+  .swiper-slide:nth-child(5n) {
+    background-color: #01e7b8;
+  }
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-h {
+  background: #eee;
+}
+.swiper-v {
+  background: #eee;
+}

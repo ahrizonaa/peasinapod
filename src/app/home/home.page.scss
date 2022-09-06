@@ -25,3 +25,11 @@
 #container a {
   text-decoration: none;
 }
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  margin: 20px;
+}
