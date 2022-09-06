@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { SwiperModule } from 'swiper/angular';
 import { HomePage } from './home/home.page';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
     IonicModule.forRoot(),
     AppRoutingModule,
     SwiperModule,
+    FormsModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

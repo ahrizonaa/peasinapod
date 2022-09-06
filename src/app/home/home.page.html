@@ -1,167 +1,60 @@
 <ion-content>
 
-  <h1 class="title">Peaz in a Pod</h1>
-  <!-- <swiper [grabCursor]="true" [effect]="'creative'" [creativeEffect]="{
-            prev: {
-              shadow: true,
-              translate: [0, 0, -400]
-            },
-            next: {
-              translate: ['100%', 0, 0]
-            }
-          }" class="mySwiper">
-    <ng-template swiperSlide>Slide 1</ng-template>
-    <ng-template swiperSlide>Slide 2</ng-template>
-    <ng-template swiperSlide>Slide 3</ng-template>
-    <ng-template swiperSlide>Slide 4</ng-template>
-    <ng-template swiperSlide>Slide 5</ng-template>
-    <ng-template swiperSlide>Slide 6</ng-template>
-    <ng-template swiperSlide>Slide 7</ng-template>
-    <ng-template swiperSlide>Slide 8</ng-template>
-    <ng-template swiperSlide>Slide 9</ng-template>
-  </swiper> -->
-  <!-- <swiper [grabCursor]="true" [effect]="'creative'" [creativeEffect]="{
-            prev: {
-              shadow: true,
-              translate: ['-120%', 0, -500]
-            },
-            next: {
-              shadow: true,
-              translate: ['120%', 0, -500]
-            }
-          }" class="mySwiper2">
-    <ng-template swiperSlide>Slide 1</ng-template>
-    <ng-template swiperSlide>Slide 2</ng-template>
-    <ng-template swiperSlide>Slide 3</ng-template>
-    <ng-template swiperSlide>Slide 4</ng-template>
-    <ng-template swiperSlide>Slide 5</ng-template>
-    <ng-template swiperSlide>Slide 6</ng-template>
-    <ng-template swiperSlide>Slide 7</ng-template>
-    <ng-template swiperSlide>Slide 8</ng-template>
-    <ng-template swiperSlide>Slide 9</ng-template>
-  </swiper> -->
-  <swiper class="swiper-h swiper-main" [pagination]="{ clickable: true }" [grabCursor]="true" [effect]="'creative'"
-    [creativeEffect]="creativeEffect">
-    <ng-template swiperSlide>
-      <swiper class="swiper-v swiper-mental" [direction]="'vertical'" [spaceBetween]="50"
-        [pagination]="{ clickable: true }">
-        <ng-template swiperSlide>Mental Health</ng-template>
-        <ng-template swiperSlide>Awareness</ng-template>
-        <ng-template swiperSlide>Education</ng-template>
-        <ng-template swiperSlide>Resources</ng-template>
-      </swiper>
-      <!-- <ul>
-        <li>education</li>
-        <li>Awareness</li>
-        <li>resources</li>
-        <li>Two Peaz in a Pod - Adopted Child
-          <ul>
-            <li>education</li>
-            <li>awareness</li>
-            <li>psychological conditions</li>
-            <li>PTSD</li>
-            <li>trauma</li>
-            <li>overcoming</li>
-          </ul>
-        </li>
-      </ul> -->
-    </ng-template>
-    <ng-template swiperSlide>
-      <swiper class="swiper-v swiper-adoption" [direction]="'vertical'" [spaceBetween]="50"
-        [pagination]="{ clickable: true }">
-        <ng-template swiperSlide>
-          <div>
-            <p>Adoptees</p>
-            <small>Two Peaz in a Pod</small>
-          </div>
-        </ng-template>
-        <ng-template swiperSlide>Psychology</ng-template>
-        <ng-template swiperSlide>Emotion</ng-template>
-        <ng-template swiperSlide>Social</ng-template>
-        <ng-template swiperSlide>Two Peaz in a Pod</ng-template>
-      </swiper>
-    </ng-template>
-    <ng-template swiperSlide>
-      <div class="gaming-content">
-        <p>Gaming</p>
-        <br>
-        <p><small>Community, friends, bonding</small></p>
-      </div>
-    </ng-template>
-    <ng-template swiperSlide>
-      <div>
-        <h1>Education</h1>
-        <h3>Knowledge</h3>
-        <h3>Emotional Intelligence</h3>
-        <h3>Social Intelligence</h3>
-      </div>
-    </ng-template>
-  </swiper>
-  <!-- <swiper [grabCursor]="true" [effect]="'creative'" [creativeEffect]="{
-            prev: {
-              shadow: true,
-              translate: [0, 0, -800],
-              rotate: [180, 0, 0]
-            },
-            next: {
-              shadow: true,
-              translate: [0, 0, -800],
-              rotate: [-180, 0, 0]
-            }
-          }" class="mySwiper4">
-    <ng-template swiperSlide>Slide 1</ng-template>
-    <ng-template swiperSlide>Slide 2</ng-template>
-    <ng-template swiperSlide>Slide 3</ng-template>
-    <ng-template swiperSlide>Slide 4</ng-template>
-    <ng-template swiperSlide>Slide 5</ng-template>
-    <ng-template swiperSlide>Slide 6</ng-template>
-    <ng-template swiperSlide>Slide 7</ng-template>
-    <ng-template swiperSlide>Slide 8</ng-template>
-    <ng-template swiperSlide>Slide 9</ng-template>
-  </swiper> -->
-  <!-- <swiper [grabCursor]="true" [effect]="'creative'" [creativeEffect]="{
-            prev: {
-              shadow: true,
-              translate: ['-125%', 0, -800],
-              rotate: [0, 0, -90]
-            },
-            next: {
-              shadow: true,
-              translate: ['125%', 0, -800],
-              rotate: [0, 0, 90]
-            }
-          }" class="mySwiper5">
-    <ng-template swiperSlide>Slide 1</ng-template>
-    <ng-template swiperSlide>Slide 2</ng-template>
-    <ng-template swiperSlide>Slide 3</ng-template>
-    <ng-template swiperSlide>Slide 4</ng-template>
-    <ng-template swiperSlide>Slide 5</ng-template>
-    <ng-template swiperSlide>Slide 6</ng-template>
-    <ng-template swiperSlide>Slide 7</ng-template>
-    <ng-template swiperSlide>Slide 8</ng-template>
-    <ng-template swiperSlide>Slide 9</ng-template>
-  </swiper> -->
-  <!-- <swiper [grabCursor]="true" [effect]="'creative'" [creativeEffect]="{
-            prev: {
-              shadow: true,
-              origin: 'left center',
-              translate: ['-5%', 0, -200],
-              rotate: [0, 100, 0]
-            },
-            next: {
-              origin: 'right center',
-              translate: ['5%', 0, -200],
-              rotate: [0, -100, 0]
-            }
-          }" class="mySwiper6">
-    <ng-template swiperSlide>Slide 1</ng-template>
-    <ng-template swiperSlide>Slide 2</ng-template>
-    <ng-template swiperSlide>Slide 3</ng-template>
-    <ng-template swiperSlide>Slide 4</ng-template>
-    <ng-template swiperSlide>Slide 5</ng-template>
-    <ng-template swiperSlide>Slide 6</ng-template>
-    <ng-template swiperSlide>Slide 7</ng-template>
-    <ng-template swiperSlide>Slide 8</ng-template>
-    <ng-template swiperSlide>Slide 9</ng-template>
-  </swiper> -->
+  <ng-container *ngIf="!access">
+    <div class="access-section">
+      <h1>Pre Release</h1>
+      <ion-item>
+        <ion-label>Access code</ion-label>
+        <ion-input (ionChange)="validate()" [(ngModel)]="accessCode"></ion-input>
+      </ion-item>
+    </div>
+  </ng-container>
+
+
+  <ng-container *ngIf="access">
+    <h1 class="title">Peaz in a Pod</h1>
+    <swiper class="swiper-h swiper-main" [pagination]="{ clickable: true }" [grabCursor]="true" [effect]="'creative'"
+      [creativeEffect]="creativeEffect">
+      <ng-template swiperSlide>
+        <swiper class="swiper-v swiper-mental" [direction]="'vertical'" [spaceBetween]="50"
+          [pagination]="{ clickable: true }">
+          <ng-template swiperSlide>Mental Health</ng-template>
+          <ng-template swiperSlide>Awareness</ng-template>
+          <ng-template swiperSlide>Education</ng-template>
+          <ng-template swiperSlide>Resources</ng-template>
+        </swiper>
+      </ng-template>
+      <ng-template swiperSlide>
+        <swiper class="swiper-v swiper-adoption" [direction]="'vertical'" [spaceBetween]="50"
+          [pagination]="{ clickable: true }">
+          <ng-template swiperSlide>
+            <div>
+              <p>Adoptees</p>
+              <small>Two Peaz in a Pod</small>
+            </div>
+          </ng-template>
+          <ng-template swiperSlide>Psychological Conditions</ng-template>
+          <ng-template swiperSlide>Effect on Emotion</ng-template>
+          <ng-template swiperSlide>Effect on Social Skills</ng-template>
+          <ng-template swiperSlide>Two Peaz in a Pod</ng-template>
+        </swiper>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div class="gaming-content">
+          <p>Gaming</p>
+          <br>
+          <p><small>Community, friends, bonding</small></p>
+        </div>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div>
+          <h1>Education</h1>
+          <h3>Knowledge</h3>
+          <h3>Emotional Intelligence</h3>
+          <h3>Social Intelligence</h3>
+        </div>
+      </ng-template>
+    </swiper>
+  </ng-container>
+
 </ion-content>

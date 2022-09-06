@@ -12,6 +12,8 @@ SwiperCore.use([EffectCreative, Pagination]);
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  accessCode;
+  access = false;
   creativeEffect: any = {
     prev: {
       shadow: true,
@@ -26,4 +28,13 @@ export class HomePage {
     clickable: true,
   };
   constructor() {}
+
+  validate() {
+    console.log(this.accessCode);
+    if (this.accessCode == '4115') {
+      this.access = true;
+    } else {
+      this.access = false;
+    }
+  }
 }
