@@ -14,6 +14,6 @@ export default async (req: VercelRequest, res: VercelResponse) => {
 
     res.status(200).send(result);
   } catch (exception) {
-    res.status(500).send(exception);
+    res.status(500).send({ error: exception.message, endpoint: 'access' });
   }
 };
