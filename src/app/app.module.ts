@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SwiperModule } from 'swiper/angular';
 import { HomePage } from './home/home.page';
@@ -18,6 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     SwiperModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
