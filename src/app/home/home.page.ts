@@ -55,28 +55,33 @@ export class HomePage {
       .post('https://peazinapod.org/api/access', {
         input: this.accessCode,
       })
-      .subscribe((res: any) => {
-        if (res.accessGranted) {
-          const animation = this.animations
-            .create()
-            .addElement(this.accesspanel.nativeElement)
-            .duration(500)
-            .fromTo('opacity', '1', '0')
-            .onFinish(async () => {
-              this.access = true;
-              (
-                await this.toast.create({
-                  message: 'Coming up',
-                  duration: 2000,
-                  translucent: true,
-                  cssClass: 'access-toast',
-                })
-              ).present();
-            });
-          animation.play();
-        } else {
-          this.access = false;
+      .subscribe(
+        (res: any) => {
+          if (res.accessGranted) {
+            const animation = this.animations
+              .create()
+              .addElement(this.accesspanel.nativeElement)
+              .duration(500)
+              .fromTo('opacity', '1', '0')
+              .onFinish(async () => {
+                this.access = true;
+                (
+                  await this.toast.create({
+                    message: 'Coming up',
+                    duration: 2000,
+                    translucent: true,
+                    cssClass: 'access-toast',
+                  })
+                ).present();
+              });
+            animation.play();
+          } else {
+            this.access = false;
+          }
+        },
+        (error) => {
+          console.log(error);
         }
-      });
+      );
   }
 }
