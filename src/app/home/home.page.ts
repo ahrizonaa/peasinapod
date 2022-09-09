@@ -22,6 +22,7 @@ SwiperCore.use([EffectCreative, Pagination]);
 })
 export class HomePage {
   @ViewChild('accesspanel') accesspanel: ElementRef;
+  @ViewChild('mainapp') mainapp: ElementRef;
   accessCodeMessenger: Subject<string> = new Subject();
   accessCode = '';
   access = false;
@@ -52,11 +53,22 @@ export class HomePage {
 
   async validate() {
     this.http
-      .post('https://peazinapod.org/api/access', {
-        input: this.accessCode,
-      })
+      .post(
+        'https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-d2d5b2d8-834e-47e5-b8cf-65471c19607e/peazinapod/access',
+        {
+          input: this.accessCode,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization:
+              'MGU2N2Y0NWMtZmMwZC00NmQ4LWE4NzktMzZkZWUyNDc4ZmQ2Om9xRzRyTFdGanluYWlaWjVuWDNaUGs2TXloVGVldFU2YkxGWGEwU2RjYVB5bzRmcUxsZVpxcWMxUnV3WG5CQnk=',
+          },
+        }
+      )
       .subscribe(
         (res: any) => {
+          console.log(res);
           if (res.accessGranted) {
             const animation = this.animations
               .create()
@@ -65,9 +77,11 @@ export class HomePage {
               .fromTo('opacity', '1', '0')
               .onFinish(async () => {
                 this.access = true;
+                this.mainapp.nativeElement.style.display = 'block';
+                this.accesspanel.nativeElement.style.display = 'none';
                 (
                   await this.toast.create({
-                    message: 'Coming up',
+                    message: 'Welcome to Peazinapod',
                     duration: 2000,
                     translucent: true,
                     cssClass: 'access-toast',

@@ -1,74 +1,127 @@
-<ion-content>
+<ion-header class="ion-no-border" translucent="true">
+  <ion-toolbar>
+    <ion-title>Peaz in a Pod</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-  <ng-container *ngIf="!access">
-    <div #accesspanel class="access-section">
+<ion-content scrollY="false">
+  <div style="height: 100%" #accesspanel>
+    <div class="access-section">
       <h1>Pre Release</h1>
       <ion-item>
         <ion-label>Access code</ion-label>
         <ion-input (ionChange)="this.accessCodeMessenger.next(this.accessCode)" [(ngModel)]="accessCode"></ion-input>
       </ion-item>
     </div>
-  </ng-container>
+  </div>
 
 
-  <ng-container *ngIf="access">
-    <h1 class="title">Peaz in a Pod</h1>
+  <div #mainapp style="display: none; height: 100%">
+
     <swiper class="swiper-h swiper-main" [pagination]="{ clickable: true }" [grabCursor]="true" [effect]="'creative'"
       [creativeEffect]="creativeEffect">
       <ng-template swiperSlide>
         <swiper class="swiper-v swiper-mental" [direction]="'vertical'" [spaceBetween]="50"
           [pagination]="{ clickable: true }">
-          <ng-template swiperSlide>Mental Health</ng-template>
-          <ng-template swiperSlide>Awareness</ng-template>
-          <ng-template swiperSlide>Education</ng-template>
-          <ng-template swiperSlide>Resources</ng-template>
+          <ng-template swiperSlide>
+            <div class="swiper-tile">
+              Mental Health
+            </div>
+          </ng-template>
+          <ng-template swiperSlide>
+            <div class="swiper-tile">
+              Awareness
+            </div>
+          </ng-template>
+          <ng-template swiperSlide>
+            <div class="swiper-tile">
+              Education
+            </div>
+          </ng-template>
+          <ng-template swiperSlide>
+            <div class="swiper-tile">Resources</div>
+          </ng-template>
         </swiper>
       </ng-template>
       <ng-template swiperSlide>
         <swiper class="swiper-v swiper-adoption" [direction]="'vertical'" [spaceBetween]="50"
           [pagination]="{ clickable: true }">
           <ng-template swiperSlide>
-            <div>
+            <div class="swiper-tile">
               <p>Adoptees</p>
-              <small>Two Peaz in a Pod</small>
-            </div>
-          </ng-template>
-          <ng-template swiperSlide>Science and Psychology of Adoption</ng-template>
-          <ng-template swiperSlide>
-            <div>
-              <h1>Emotional and Social Development</h1>
-              <ul>
-                <li>Relationships with Adults</li>
-                <li>Relationships with peers</li>
-                <li>Emotional Functioning</li>
-                <li>Sense of Identity and Belonging</li>
-              </ul>
             </div>
           </ng-template>
           <ng-template swiperSlide>
-            <div>
+            <div class="swiper-tile">
+              Science and Psychology of Adoption
+            </div>
+          </ng-template>
+          <ng-template swiperSlide>
+            <div class="swiper-tile">
+              <ion-list>
+                <ion-list-header> Emotional and Social Development </ion-list-header>
+                <ion-item lines="none">
+                  <ion-avatar slot="start">
+                    <img src="../../assets/images/adult-relationship.jpg" />
+                  </ion-avatar>
+                  <ion-label class="ion-text-wrap">
+                    <h3>Relationships with Adults</h3>
+                  </ion-label>
+                </ion-item>
+
+                <ion-item lines="none">
+                  <ion-avatar slot="start">
+                    <img src="../../assets/images/peer-relationship.jpg" />
+                  </ion-avatar>
+                  <ion-label class="ion-text-wrap">
+                    <h3>Relationships with peers</h3>
+                  </ion-label>
+                </ion-item>
+
+                <ion-item lines="none">
+                  <ion-avatar slot="start">
+                    <img src="../../assets/images/emotional-function.png" />
+                  </ion-avatar>
+                  <ion-label class="ion-text-wrap">
+                    <h3>Emotional Functioning</h3>
+                  </ion-label>
+                </ion-item>
+
+                <ion-item lines="none">
+                  <ion-avatar slot="start">
+                    <img src="../../assets/images/identity.jpg" />
+                  </ion-avatar>
+                  <ion-label class="ion-text-wrap">
+                    <h3>Sense of Identity and Belonging</h3>
+                  </ion-label>
+                </ion-item>
+              </ion-list>
+            </div>
+          </ng-template>
+          <ng-template swiperSlide>
+            <div class="swiper-tile">
               <h1>Learn, grow, overcome</h1>
-              <a href="https://twopeazinapod.org">Two Peaz in a Pod</a>
+              <a href="">Two Peaz in a Pod</a>
             </div>
           </ng-template>
         </swiper>
       </ng-template>
       <ng-template swiperSlide>
-        <div class="gaming-content">
-          <p>Gaming</p>
+        <div class="gaming-content swiper-tile">
+          <h1>Gaming</h1>
           <br>
-          <p><small>Community, friends, bonding</small></p>
+          <h6>Community, friends, bonding</h6>
         </div>
       </ng-template>
-      <ng-template swiperSlide>
+      <!-- <ng-template swiperSlide>
         <div>
           <h1>Education</h1>
           <h3>Knowledge</h3>
           <h3>Emotional Intelligence</h3>
           <h3>Social Intelligence</h3>
         </div>
-      </ng-template>
+      </ng-template> -->
     </swiper>
-  </ng-container>
+  </div>
 
 </ion-content>
