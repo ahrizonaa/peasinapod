@@ -10,7 +10,8 @@
       <h1>Pre Release</h1>
       <ion-item>
         <ion-label>Access code</ion-label>
-        <ion-input (ionChange)="this.accessCodeMessenger.next(this.accessCode)" [(ngModel)]="accessCode"></ion-input>
+        <ion-input inputmode="numeric" autofocus="true" (ionChange)="this.accessCodeMessenger.next(this.accessCode)"
+          [(ngModel)]="accessCode"></ion-input>
       </ion-item>
     </div>
   </div>
