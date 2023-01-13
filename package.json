@@ -2,6 +2,7 @@
   "name": "peasinapod",
   "version": "0.0.1",
   "author": "Ionic Framework",
+  "type": "module",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
