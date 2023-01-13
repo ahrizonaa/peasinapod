@@ -53,19 +53,9 @@ export class HomePage {
 
   async validate() {
     this.http
-      .post(
-        'https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-d2d5b2d8-834e-47e5-b8cf-65471c19607e/peazinapod/access',
-        {
-          input: this.accessCode,
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization:
-              'MGU2N2Y0NWMtZmMwZC00NmQ4LWE4NzktMzZkZWUyNDc4ZmQ2Om9xRzRyTFdGanluYWlaWjVuWDNaUGs2TXloVGVldFU2YkxGWGEwU2RjYVB5bzRmcUxsZVpxcWMxUnV3WG5CQnk=',
-          },
-        }
-      )
+      .post('https://peazinapod.org/api/access', {
+        input: this.accessCode,
+      })
       .subscribe(
         (res: any) => {
           console.log(res);
