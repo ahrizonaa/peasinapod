@@ -52,40 +52,64 @@ export class HomePage {
   }
 
   async validate() {
-    this.http
-      .post('https://peazinapod.org/api/access', {
-        input: this.accessCode,
-      })
-      .subscribe(
-        (res: any) => {
-          console.log(res);
-          if (res.accessGranted) {
-            const animation = this.animations
-              .create()
-              .addElement(this.accesspanel.nativeElement)
-              .duration(500)
-              .fromTo('opacity', '1', '0')
-              .onFinish(async () => {
-                this.access = true;
-                this.mainapp.nativeElement.style.display = 'block';
-                this.accesspanel.nativeElement.style.display = 'none';
-                (
-                  await this.toast.create({
-                    message: 'Welcome to Peazinapod',
-                    duration: 2000,
-                    translucent: true,
-                    cssClass: 'access-toast',
-                  })
-                ).present();
-              });
-            animation.play();
-          } else {
-            this.access = false;
-          }
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
+    // this.http
+    //   .post('https://peazinapod.org/api/access', {
+    //     input: this.accessCode,
+    //   })
+    //   .subscribe(
+    //     (res: any) => {
+    //       console.log(res);
+    //       if (res.accessGranted) {
+    //         const animation = this.animations
+    //           .create()
+    //           .addElement(this.accesspanel.nativeElement)
+    //           .duration(500)
+    //           .fromTo('opacity', '1', '0')
+    //           .onFinish(async () => {
+    //             this.access = true;
+    //             this.mainapp.nativeElement.style.display = 'block';
+    //             this.accesspanel.nativeElement.style.display = 'none';
+    //             (
+    //               await this.toast.create({
+    //                 message: 'Welcome to Peazinapod',
+    //                 duration: 2000,
+    //                 translucent: true,
+    //                 cssClass: 'access-toast',
+    //               })
+    //             ).present();
+    //           });
+    //         animation.play();
+    //       } else {
+    //         this.access = false;
+    //       }
+    //     },
+    //     (error) => {
+    //       console.log(error);
+    //     }
+    //   );
+
+    if (this.accessCode === '4115') {
+      const animation = this.animations
+        .create()
+        .addElement(this.accesspanel.nativeElement)
+        .duration(500)
+        .fromTo('opacity', '1', '0')
+        .onFinish(async () => {
+          this.access = true;
+          this.mainapp.nativeElement.style.display = 'block';
+          this.accesspanel.nativeElement.style.display = 'none';
+          (
+            await this.toast.create({
+              message: 'Welcome to Peazinapod',
+              duration: 2000,
+              translucent: true,
+              cssClass: 'access-toast',
+            })
+          ).present();
+        });
+      animation.play();
+    } else {
+      this.access = false;
+    }
   }
 }
